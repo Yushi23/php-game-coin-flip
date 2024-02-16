@@ -66,6 +66,7 @@ class Game {
     public function play()
     {
         while(true) {
+            
             //Подбросить моненту
             //Если орел, то п1 получает монету, п2 теряет
             //Если решка, то п1 теряет монету, п2 получает
@@ -89,7 +90,6 @@ class Game {
         return $this->player1->bank() > $this->player2->bank() ? $this->player1 : $this->player2;
     }
 
-
     public function end()
     {
         //Победитель тот, у кого больше монет
@@ -101,11 +101,10 @@ class Game {
 
             Победитель: {$this->winner()->name}
             Кол-во подбрасываний: {$this->flips}
-            
+
         EOT;
     }
 }
-
 
 $game = new Game(
     new Player("Joe", 10000),
